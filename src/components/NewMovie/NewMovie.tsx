@@ -54,7 +54,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         name="title"
         label="Title"
         value={inputState.title}
-        onChange={e => setInputState({ ...inputState, title: e })}
+        onChange={e => setInputState({ ...inputState, title: e.target.value })}
         required
       />
 
@@ -62,14 +62,14 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         name="description"
         label="Description"
         value={description}
-        onChange={e => setDescription(e)}
+        onChange={e => setDescription(e.target.value)}
       />
 
       <TextField
         name="imgUrl"
         label="Image URL"
         value={inputState.imgUrl}
-        onChange={e => setInputState({ ...inputState, imgUrl: e })}
+        onChange={e => setInputState({ ...inputState, imgUrl: e.target.value })}
         required
       />
 
@@ -77,7 +77,9 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         name="imdbUrl"
         label="Imdb URL"
         value={inputState.imdbUrl}
-        onChange={e => setInputState({ ...inputState, imdbUrl: e })}
+        onChange={e =>
+          setInputState({ ...inputState, imdbUrl: e.target.value })
+        }
         required
       />
 
@@ -85,7 +87,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         name="imdbId"
         label="Imdb ID"
         value={inputState.imdbId}
-        onChange={e => setInputState({ ...inputState, imdbId: e })}
+        onChange={e => setInputState({ ...inputState, imdbId: e.target.value })}
         onBlur={() => setBlurredFields({ ...blurredFields, imdbId: true })}
         error={imdbIdError}
       />
