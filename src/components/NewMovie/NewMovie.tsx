@@ -43,6 +43,8 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
 
     setInputState(state);
 
+    setDescription('');
+
     setCount(current => current + 1);
   }
 
